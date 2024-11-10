@@ -1,91 +1,192 @@
+/* Reset and Base Styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-    font-family: 'Nunito', sans-serif;
-    margin: 0;
-    padding: 0;
-    color: #333;
-    background: #f8f8f8;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  background-color: #f4f4f9;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+.container {
+  width: 90%;
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* Header Styling */
+header {
+  background: linear-gradient(135deg, #333, #555);
+  color: #fff;
+  padding: 60px 0;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 3em;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+header p {
+  font-size: 1.2em;
+  color: #ddd;
+}
+
+/* Section Styling */
+section {
+  padding: 50px 0;
+  text-align: center;
+}
+
+h2 {
+  font-size: 2em;
+  color: #333;
+  margin-bottom: 20px;
+  position: relative;
+  display: inline-block;
+}
+
+h2::after {
+  content: '';
+  width: 50px;
+  height: 3px;
+  background-color: #5ac8c8; /* Teal accent color */
+  display: block;
+  margin: 8px auto 0;
+  border-radius: 5px;
+}
+
+/* Featured Video - Full Width on Larger Screens */
+#featured-video {
+  display: flex;
+  justify-content: center;
+  padding: 40px 0;
+}
+
+#featured-video iframe {
+  width: 100%;
+  max-width: 80vw; /* Allows the video to take up 80% of the viewport width */
+  height: calc(80vw * 9 / 16); /* Maintains a 16:9 aspect ratio based on width */
+  max-height: 80vh; /* Limits height for smaller screens */
+  border-radius: 10px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s;
+}
+
+#featured-video iframe:hover {
+  transform: scale(1.02);
+}
+
+/* About Section */
+#about p {
+  font-size: 1.1em;
+  color: #666;
+  margin: 20px auto;
+  width: 80%;
+  max-width: 700px;
+}
+
+/* Portfolio Styling */
+#portfolio .video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 25px;
+  margin-top: 20px;
+}
+
+#portfolio .video {
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s, transform 0.3s;
+  text-align: center;
+}
+
+#portfolio .video:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px);
+}
+
+#portfolio .video iframe {
+  width: 100%;
+  height: 180px;
+  border: none;
+  border-radius: 10px 10px 0 0;
+}
+
+#portfolio .video img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+}
+
+#portfolio .video p,
+#portfolio .caption {
+  padding: 15px;
+  font-size: 1em;
+  color: #333;
+  font-weight: 500;
+}
+
+/* Footer Styling */
+footer {
+  background: linear-gradient(135deg, #333, #444);
+  color: #fff;
+  padding: 25px 0;
+  text-align: center;
+  font-size: 1em;
+}
+
+footer a {
+  color: #5ac8c8; /* Teal accent color */
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+footer a:hover {
+  color: #3ea0a0; /* Slightly darker teal for hover */
+}
+
+/* Button Styling */
+button {
+  background-color: #5ac8c8; /* Teal accent color */
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 20px;
+  font-size: 1em;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+  background-color: #3ea0a0; /* Slightly darker teal for hover */
+  transform: translateY(-3px);
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  header h1 {
+      font-size: 2.5em;
   }
-  header {
-    background: #444;
-    color: #fff;
-    padding: 10px 20px;
-    text-align: center;
+
+  #about p {
+      width: 100%;
   }
-  nav {
-    display: flex;
-    justify-content: flex-end; /* Aligns navigation items to the right */
-    background: #333;
-    padding: 10px 0;
+
+  #portfolio .video iframe,
+  #portfolio .video img {
+      height: 200px;
   }
-  
-  nav a {
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    display: inline-block;
-  }
-  .video {
-    position: relative;
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-  }
-  .video iframe, .video img {
-    width: 100%;
-    height: 100%;
-  }
-  .video .caption {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
-    text-align: center;
-    padding: 20px;
-    font-size: 24px;
-  }
-  footer {
-    background: #444;
-    color: #fff;
-    text-align: center;
-    padding: 10px;
-    width: 100%;
-  }
-  
-  .gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Increase min column width */
-    grid-gap: 15px; /* Increase gap for better spacing */
-  }
-  
-  .photo img {
-    width: 100%; /* Full width of the column */
-    height: 300px; /* Increased fixed height for all images */
-    object-fit: cover; /* Ensures images cover the area without distorting aspect ratios */
-    display: block; /* Removes any extra space below the image */
-  }
-  
-  .about-me {
-    width: 80%; /* Adjust the width as necessary */
-    max-width: 600px; /* Sets a max-width for larger screens */
-    background: #f4f4f4;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Optional: adds subtle shadow for depth */
-    text-align: center; /* Centers the text inside the about-me section */
-  }
-  
-  .about-me h2 {
-    color: #333;
-  }
-  
-  .about-me ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0; /* Removes margin to align start edge of the list with the start edge of the heading */
-  }
-  
-  .about-me li {
-    padding: 8px 0;
-  }
+}
