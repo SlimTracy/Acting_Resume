@@ -1,153 +1,133 @@
-/* General Reset */
-* {
+/* General Styles */
+body {
+  font-family: 'Poppins', sans-serif;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  background-color: #f4f4f9;
+  color: #333;
+  line-height: 1.6;
 }
 
-/* Body Styling */
-body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  color: #333;
-  background-color: #f9f9f9;
-  margin: 0;
-  padding: 0;
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px 0;
+}
+
+h1, h2 {
+  margin: 10px 0;
+  color: #222;
+}
+
+a {
+  color: #007BFF;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 /* Header Section */
 header {
-  background-color: #222;
-  color: #fff;
-  padding: 40px 20px;
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  color: white;
+  padding: 50px 0;
   text-align: center;
 }
 
 header h1 {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 0;
 }
 
 header p {
-  font-size: 1.2rem;
-  margin-top: 0;
+  font-size: 1.5rem;
+  margin: 10px 0;
 }
 
-/* Photos Section */
-#photos {
-  margin: 40px auto;
-  text-align: center;
-}
-
-.photo-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive columns */
-  gap: 20px;
-  justify-content: center;
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.photo-grid img {
+/* Carousel Section */
+.carousel {
+  position: relative;
+  overflow: hidden;
   width: 100%;
-  height: auto;
-  border-radius: 10px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+  margin: 20px 0;
 }
 
-.photo-grid img:hover {
-  transform: scale(1.08); /* Zoom effect */
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+.carousel-images {
+  display: flex;
+  gap: 15px; /* Space between photos */
+  transition: transform 0.3s ease-in-out;
+}
+
+.carousel-images img {
+  max-height: 250px; /* Ensures consistent height */
+  max-width: 100%;
+  object-fit: contain; /* Prevents distortion */
+  border-radius: 10px;
+  margin: 0 auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.prev-btn {
+  left: 10px;
+}
+
+.next-btn {
+  right: 10px;
+}
+
+.carousel-btn:hover {
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 /* Featured Video Section */
 #featured-video {
-  margin: 40px auto;
-  text-align: center;
+  background: #ffffff;
+  padding: 40px 0;
 }
 
-#featured-video iframe {
-  width: 90%;
-  max-width: 800px;
-  height: 450px;
-  border: none;
-  border-radius: 10px;
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  height: 0;
+  overflow: hidden;
 }
 
-/* About Section */
-#about {
-  margin: 40px auto;
-  padding: 20px;
-  text-align: center;
-}
-
-#about h2 {
-  font-size: 2rem;
-  margin-bottom: 10px;
-}
-
-#about p {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-/* Portfolio Section */
-#portfolio {
-  margin: 40px auto;
-  padding: 20px;
-  text-align: center;
-}
-
-#portfolio h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-}
-
-.video-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.video-grid .video {
-  text-align: center;
-}
-
-.video-grid iframe,
-.video-grid img {
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: auto;
-  border-radius: 10px;
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
-  transition: transform 0.3s ease;
+  height: 100%;
 }
 
-.video-grid iframe:hover,
-.video-grid img:hover {
-  transform: scale(1.05);
-}
-
-/* Footer Section */
+/* Footer */
 footer {
-  margin-top: 40px;
-  padding: 20px;
+  background: #333;
+  color: white;
+  padding: 20px 0;
   text-align: center;
-  background-color: #222;
-  color: #fff;
 }
 
-footer a {
-  color: #fff;
-  text-decoration: underline;
-}
-
-footer a:hover {
-  color: #f0c040;
+footer p {
+  margin: 0;
 }
