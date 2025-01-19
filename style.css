@@ -44,59 +44,54 @@ header h1 {
   margin: 0;
 }
 
-header p {
-  font-size: 1.5rem;
-  margin: 10px 0;
-}
-
-/* Carousel Section */
-.carousel {
-  position: relative;
-  overflow: hidden;
-  width: 100%;
+/* Photos Section */
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
   margin: 20px 0;
 }
 
-.carousel-images {
-  display: flex;
-  gap: 15px; /* Space between photos */
-  transition: transform 0.3s ease-in-out;
-}
-
-.carousel-images img {
-  max-height: 250px; /* Ensures consistent height */
-  max-width: 100%;
-  object-fit: contain; /* Prevents distortion */
-  border-radius: 10px;
-  margin: 0 auto;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-.carousel-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  border: none;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  font-size: 1.5rem;
+.clickable-photo {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
   cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.clickable-photo:hover {
+  transform: scale(1.05);
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
   z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
 }
 
-.prev-btn {
-  left: 10px;
+.modal-content {
+  display: block;
+  margin: auto;
+  max-width: 90%;
+  max-height: 90%;
 }
 
-.next-btn {
-  right: 10px;
-}
-
-.carousel-btn:hover {
-  background-color: rgba(0, 0, 0, 0.7);
+.close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 /* Featured Video Section */
@@ -130,4 +125,37 @@ footer {
 
 footer p {
   margin: 0;
+}
+
+
+/* Bio Section */
+#bio {
+  background-color: #ffffff;
+  padding: 40px 20px;
+  text-align: center;
+  margin: 20px 0;
+  border-top: 2px solid #eee;
+  border-bottom: 2px solid #eee;
+}
+
+#bio h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+.bio-details {
+  list-style: none;
+  padding: 0;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #555;
+}
+
+.bio-details li {
+  margin: 10px 0;
+}
+
+.bio-details strong {
+  color: #333;
 }

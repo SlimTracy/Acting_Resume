@@ -11,32 +11,20 @@
     <header>
         <div class="container">
             <h1>Landon Tracy</h1>
-            <!-- <p>Actor | Performer | Video Talent</p> -->
         </div>
     </header>
 
-    <!-- About Section
-    <section id="about">
-        <div class="container">
-            <p>Welcome to my official portfolio.</p>
-        </div>
-    </section> -->
-
-    <!-- Carousel Section -->
+    <!-- Photos Section -->
     <section id="photos">
         <div class="container">
             <h2>Headshots</h2>
-            <div class="carousel">
-                <button class="carousel-btn prev-btn">&lt;</button>
-                <div class="carousel-images">
-                    <img src="assets/_DSC3069.jpg" alt="Headshot 1">
-                    <img src="assets/_DSC3093.jpg" alt="Headshot 2">
-                    <img src="assets/_DSC3133.jpg" alt="Headshot 3">
-                    <img src="assets/_DSC3142.jpg" alt="Headshot 4">
-                    <img src="assets/_DSC3145.jpg" alt="Headshot 5">
-                    <img src="assets/_DSC3151.jpg" alt="Headshot 6">
-                </div>
-                <button class="carousel-btn next-btn">&gt;</button>
+            <div class="photo-grid">
+                <img src="assets/_DSC3069.jpg" alt="Headshot 1" class="clickable-photo">
+                <img src="assets/_DSC3133.jpg" alt="Headshot 2" class="clickable-photo">
+                <img src="assets/_DSC3093.jpg" alt="Headshot 3" class="clickable-photo">
+                <img src="assets/_DSC3142.jpg" alt="Headshot 4" class="clickable-photo">
+                <img src="assets/_DSC3145.jpg" alt="Headshot 5" class="clickable-photo">
+                <img src="assets/_DSC3151.jpg" alt="Headshot 6" class="clickable-photo">
             </div>
         </div>
     </section>
@@ -56,6 +44,17 @@
         </div>
     </section>
 
+    <section id="bio">
+        <div class="container">
+            <h2>Bio</h2>
+            <ul class="bio-details">
+                <li><strong>Height:</strong> 6'5"</li>
+                <li><strong>Hair:</strong> Brown</li>
+                <li><strong>Eyes:</strong> Blue</li>
+            </ul>
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <footer>
         <div class="container">
@@ -63,6 +62,15 @@
         </div>
     </footer>
 
+    <!-- Modal for Photos -->
+    <div id="photo-modal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modal-image">
+    </div>
+
     <script src="script.js"></script>
+
+
+
 </body>
 </html>

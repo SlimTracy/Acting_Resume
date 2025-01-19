@@ -1,32 +1,26 @@
-// Carousel Logic
+// Modal Logic for Photos
 document.addEventListener("DOMContentLoaded", () => {
-    const carousel = document.querySelector(".carousel-images");
-    const images = document.querySelectorAll(".carousel-images img");
-    const prevButton = document.querySelector(".prev-btn");
-    const nextButton = document.querySelector(".next-btn");
+    const modal = document.getElementById("photo-modal");
+    const modalImage = document.getElementById("modal-image");
+    const closeModal = document.querySelector(".close");
 
-    let currentIndex = 0;
-    const imageWidth = images[0].clientWidth;
-
-    // Update the carousel position
-    const updateCarousel = () => {
-        carousel.style.transform = `translateX(-${currentIndex * imageWidth}px)`;
-    };
-
-    // Move to the previous image
-    prevButton.addEventListener("click", () => {
-        currentIndex = currentIndex > 0 ? currentIndex - 1 : images.length - 1;
-        updateCarousel();
+    // Open Modal on Image Click
+    document.querySelectorAll(".clickable-photo").forEach(photo => {
+        photo.addEventListener("click", () => {
+            modal.style.display = "block";
+            modalImage.src = photo.src;
+        });
     });
 
-    // Move to the next image
-    nextButton.addEventListener("click", () => {
-        currentIndex = currentIndex < images.length - 1 ? currentIndex + 1 : 0;
-        updateCarousel();
+    // Close Modal on Close Button Click
+    closeModal.addEventListener("click", () => {
+        modal.style.display = "none";
     });
 
-    // Automatically resize on window resize
-    window.addEventListener("resize", () => {
-        updateCarousel();
+    // Close Modal on Outside Click
+    window.addEventListener("click", event => {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
     });
 });
